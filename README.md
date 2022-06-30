@@ -1,15 +1,8 @@
 # README Generator
-    ![License badge](function renderLicenseBadge(license) {
-  if (questions.licenseConfirm) {
-    let badgeURL = 'https://img.shields.io/badge/License-'+license.value+'-'+questions.badgeColor.value;
-    return badgeURL;
-  } else {
-    return '';
-  }
-})
+    ![License badge](https://img.shields.io/badge/License-MIT-blue)
 
     ## Description
-    roducing a README is a vital part of development work as it is the front door to your initiatives. This tool streamlines that process using best practices for README format.
+    Producing a README is a vital part of development work as it is the front door to your initiatives. This tool streamlines that process using best practices for README format.
 
     ## Table of Contents
     * [Installation](#installation)
@@ -20,17 +13,23 @@
     * [Questions](#questions)
   
     ## Installation
-    undefined
+    This requires Node.js. Once that is installed, you will need to use the FileSystem package built in, as well as Inquirer. This tool uses Inquirer 8.2.4. To install, type "npm i inquirer@8.2.4" in your terminal. All necessary dependencies will be installed from there.
 
     ## Usage
     Initialize the prompt by typing "node index" in your terminal. Answer the questions and this should generate your README.
     
 
+    
+    
+    
+    
+    
+
     ## License
-    function renderLicenseSection(license) {
-  let licenseText = `Licensed under the [${license.value}](${renderLicenseLink}) license.`;
-  return licenseText;
-}
+    Licensed under the [MIT](https://opensource.org/licenses/MIT) license.
+
+    
+    
 
     ## Contributing
     Any additional guidance on code-cleaning and best practices is always appreciated. Additional tools or implementations are welcome, as well.
