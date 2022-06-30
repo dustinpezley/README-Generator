@@ -95,7 +95,7 @@ function generateMarkdown(data) {
     ${data.collaboratorsConfirm ? '## Credits  ' : data.thirdPartyAssetsConfirm ? '## Credits  ' : data.tutorialConfirm ? '## Credits  ' : ''}
     ${data.collaboratorsConfirm ? 'This project was produced as a collaborative effort between myself and the following:  ' : ''}
     ${data.collaboratorsConfirm ? collablinks.forEach(collabProfiles) : ''}
-    ${data.thirdPartyAssetsConfirm ? thirdParty.keys.forEach(key+' '+'['+thirdParty[key]+']('+thirdParty[key]+')  ') : ''}
+    ${data.thirdPartyAssetsConfirm ? thirdParty.keys().forEach(key+' '+'['+thirdParty[key]+']('+thirdParty[key]+')  ') : ''}
     ${data.tutorialConfirm ? tutorialLinks.forEach(tutorials) : ''}
 
     ## License
