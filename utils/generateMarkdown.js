@@ -43,14 +43,24 @@ function generateMarkdown(data) {
 
     function collabProfiles(username) {
       return 'https://github.com/'+username;
-    }
-
-    return creditsText = `
-      ## Credits
-      ${collabLinks.forEach(collabProfiles)}
-      `;
+    };
   }
 
+  if (data.tutorialConfirm) {
+    let tutorialLinks = data.tutorials.split(',').trim();
+
+    function tutorials(link) {
+      return link;
+    };
+  }
+
+  if(thirdPartyAssetsConfirm) {
+    let assets = JSON.parse(eval('({'+thirdPartyAssets+'})'));
+
+    let creators = Object.keys(assets);
+
+    return creators, assets;
+  }
 
   return `# ${data.title}
     ![License badge](${renderLicenseBadge()})
@@ -67,11 +77,16 @@ function generateMarkdown(data) {
     * [Questions](#questions)
   
     ## Installation
-    ${data.installation}
+    ${data.installations}
 
     ## Usage
     ${data.instructions}
     ${data.screenshotsConfirm ? data.screenshots : ''}
+
+    ${collaboratorsConfirm ? '## Credits' : thirdPartyAssetsConfirm ? '## Credits' : tutorialConfirm ? '## Credits' : ''}
+    ${collaboratorsConfirm ? collablinks.forEach(collabProfiles(username)) : ''}
+    ${thirdPartyAssetsConfirm ? creators.forEach((key) => {'['+key+']('+assets[key]+')'}) : ''}
+    ${tutorialConfirm ? tutorialLinks.forEach(tutorials(link)) : ''}
 
     ## License
     ${renderLicenseSection()}
