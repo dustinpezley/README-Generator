@@ -175,7 +175,7 @@ const questions = () => {
       }
     },
     {
-      type: 'checkbox',
+      type: 'list',
       name: 'badgeColor',
       message: 'Please choose a color for your license badge:',
       choices: ['brightgreen', 'green', 'yellowgreen', 'yellow', 'orange', 'red', 'blue', 'lightgrey', 'blueviolet'],
@@ -238,19 +238,30 @@ const questions = () => {
 };
 
 // TODO: Create a function to write README file.
-const writeFile = data => {
-  return new Promise((resolve, reject) => {
-    fs.writeFile('README.md', data, err => {
-      if (err) {
-        reject(err);
-        return;
-      }
+// const writeFile = data => {
+//   return new Promise((resolve, reject) => {
+//     fs.writeFile('README.md', data, err => {
+//       if (err) {
+//         reject(err);
+//         return;
+//       }
 
-      resolve({
-        ok: true,
-        message: 'Your README has been created.'
-      })
-    })
+//       resolve({
+//         ok: true,
+//         message: 'Your README has been created.'
+//       })
+//     })
+//   })
+// }
+
+function writeFile(fileName, data) {
+  fs.writeFile(fileName, data, err => {
+    if(err) {
+      console.log(err);
+      return;
+    } else {
+      console.log('Your README has been created.');
+    }
   })
 }
 
@@ -262,11 +273,12 @@ const writeFile = data => {
 
 questions()
   .then(answers => {
-    return generateMarkdown(answers);
+    console.log(answers);
+    return writeFile('README.md', generateMarkdown(answers));
   })
-  .then(data => {
-    return writeFile(data);
-  })
+  // .then(data => {
+  //   return writeFile(data);
+  // })
   .catch(err => {
     console.log(err);
   })

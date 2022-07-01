@@ -31,36 +31,56 @@ function renderLicenseSection(license) {
 
 // Generates README text.
 function generateMarkdown(data) {
-  // Generates GitHub link for collaborators (used in forEach below)
-  function collabProfiles(item) {
-    return '['+item+']{https://github.com/'+item+')  ';
+  // set variables for later use.
+  var thirdParty = {};
+  var collabLinksTrim = [];
+  var tutorialLinksTrim = [];
+
+  // Generates GitHub link for collaborators
+  function collabProfiles(array) {
+    for(var i=0;i<array.length;i++) {
+      array[i] = '['+array[i]+']{https://github.com/'+array[i]+')';
+    }
+    return array.join('  ');
   };
 
-  // Generates tutorial links (used in forEach below)
-  function tutorials(item) {
-    return '['+item+']('+item+')  ';
+
+  // Generates tutorial links
+  function tutorials(array) {
+    for(var i=0;i<array.length;i++) {
+      array[i] = '['+array[i]+']('+array[i]+')';
+    }
+    return array.join('  ');
   };
 
   function thirdPartyObject(string){
-    let thirdParty={}, re = new RegExp('(.*?):(.*?)(?:,|$)','g');
+    let re = new RegExp('(.*?):(.*?)(?:,|$)','g');
 
     string.replace(re, (_, key, value) => thirdParty[key.trim()] = value.trim())
+  }
 
-    return thirdParty;
+  function thirdPartyJoin(obj) {
+    for (var key in obj) {
+      if(obj.hasOwnProperty(key)) {
+        obj[key] = key+' '+'['+obj[key]+']('+obj[key]+')';
+      }
+    }
+    thirdPartyArray = Object.values(obj);
+    return thirdPartyArray.join('  ');
   }
 
   // Splits separate collaborators into array based on comma delimiter
   if (data.collaboratorsConfirm) {
-    const collabLinks = data.collaborators.split(',').trim();
+    const collabLinks = data.collaborators.split(',');
 
-    return collabLinks;
+    var collabLinksTrim = collabLinks.map(collabLinks => collabLinks.trim());
   }
 
   // Splits separate tutorials into array based on comma delimiter
   if (data.tutorialConfirm) {
-    let tutorialLinks = data.tutorials.split(',').trim();
+    const tutorialLinks = data.tutorials.split(',');
 
-    return tutorialLinks;
+    var tutorialLinksTrim = tutorialLinks.map(tutorialLinks => tutorialLinks.trim());
   }
 
   // Converts thirdPartyAssets string to object. Keys and values used below.
@@ -94,9 +114,9 @@ function generateMarkdown(data) {
 
     ${data.collaboratorsConfirm ? '## Credits  ' : data.thirdPartyAssetsConfirm ? '## Credits  ' : data.tutorialConfirm ? '## Credits  ' : ''}
     ${data.collaboratorsConfirm ? 'This project was produced as a collaborative effort between myself and the following:  ' : ''}
-    ${data.collaboratorsConfirm ? collablinks.forEach(collabProfiles) : ''}
-    ${data.thirdPartyAssetsConfirm ? thirdParty.keys().forEach(key+' '+'['+thirdParty[key]+']('+thirdParty[key]+')  ') : ''}
-    ${data.tutorialConfirm ? tutorialLinks.forEach(tutorials) : ''}
+    ${data.collaboratorsConfirm ? collabProfiles(collabLinksTrim) : ''}
+    ${data.thirdPartyAssetsConfirm ? thirdPartyJoin(thirdParty) : ''}
+    ${data.tutorialConfirm ? tutorials(tutorialLinksTrim) : ''}
 
     ## License
     ${renderLicenseSection(data.license)}
