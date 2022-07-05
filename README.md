@@ -1,8 +1,8 @@
-# title
+# README Generator
     ![License badge](https://img.shields.io/badge/License-MIT-blue)
 
     ## Description
-    description
+    Producing a README is a vital part of development work as it is the front door to your initiatives. This tool streamlines that process using best practices for README format.
 
     ## Table of Contents
     * [Installation](#installation)
@@ -13,31 +13,31 @@
     * [Questions](#questions)
   
     ## Installation
-    installation
+    This requires Node.js. Once that is installed, you will need to use the FileSystem package built in, as well as Inquirer. This tool uses Inquirer 8.2.4. To install, type "npm i inquirer@8.2.4" in your terminal. All necessary dependencies will be installed from there.
 
     ## Usage
-    instructions
+    Initialize the prompt by typing "node index" in your terminal. Answer the questions and this should generate your README.
     
 
     ## Credits  
-    This project was produced as a collaborative effort between myself and the following:  
-    [user]{https://github.com/user)
-    third [party](party)
-    [tutorials](tutorials)
+    
+    
+    SBoudrias [https://www.npmjs.com/package/inquirer/v/8.2.4](https://www.npmjs.com/package/inquirer/v/8.2.4)
+    
 
     ## License
     Licensed under the [MIT](https://opensource.org/licenses/MIT) license.
 
     ## Features  
-    features
+    This product takes a simple questionnaire and uses the responses to generate a quality README that adheres to best practices. Question dependencies are built throughout, so you will only get a README that is pertinent to your project.
 
     ## Contributing
-    contributions
+    Any additional guidance on code-cleaning and best practices is always appreciated. Additional tools or implementations are welcome, as well.
 
     ## Tests
-    tests
+    The produced file can either be deleted or overwritten with this program. Running it using any values is welcome. There are, however, question dependencies, so incorrect formatting in specific answers (i.e. third-party assets, etc.) will cause issues and my not populate in the README correctly.
 
     ## Questions
-    If you have any questions on this application or wish to contribute, please contact me directly at email.
-    You can view more of my work on my [GitHub profile](https://github.com/username).
+    If you have any questions on this application or wish to contribute, please contact me directly at dustinpezley@gmail.com.
+    You can view more of my work on my [GitHub profile](https://github.com/dustinpezley).
   
