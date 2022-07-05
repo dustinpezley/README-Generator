@@ -17,11 +17,11 @@ This requires Node.js. Once that is installed, you will need to use the FileSyst
 
 ## Usage
 Initialize the prompt by typing "node index" in your terminal. Answer the questions and this should generate your README.
+![Challenge - README Generator (1)](https://user-images.githubusercontent.com/103615812/177230126-48d5d367-28c9-42c0-b04d-d3064b38adc6.gif)
 
+A tutorial video can be found [here](https://drive.google.com/file/d/1zJ_AXCeXGntXj_Awm2DnJbjwp9-MwDLp/view).
 
 ## Credits  
-
-
 SBoudrias [https://www.npmjs.com/package/inquirer/v/8.2.4](https://www.npmjs.com/package/inquirer/v/8.2.4)
 
 
