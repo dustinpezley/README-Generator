@@ -11,17 +11,19 @@ Producing a README is a vital part of development work as it is the front door t
 * [Contributing](#contributing)
 * [Tests](#tests)
 * [Questions](#questions)
-  
+
 ## Installation
 This requires Node.js. Once that is installed, you will need to use the FileSystem package built in, as well as Inquirer. This tool uses Inquirer 8.2.4. To install, type "npm i inquirer@8.2.4" in your terminal. All necessary dependencies will be installed from there.
 
 ## Usage
 Initialize the prompt by typing "node index" in your terminal. Answer the questions and this should generate your README.
-    
+
 
 ## Credits  
+
+
 SBoudrias [https://www.npmjs.com/package/inquirer/v/8.2.4](https://www.npmjs.com/package/inquirer/v/8.2.4)
-    
+
 
 ## License
 Licensed under the [MIT](https://opensource.org/licenses/MIT) license.
@@ -38,4 +40,3 @@ The produced file can either be deleted or overwritten with this program. Runnin
 ## Questions
 If you have any questions on this application or wish to contribute, please contact me directly at dustinpezley@gmail.com.
 You can view more of my work on my [GitHub profile](https://github.com/dustinpezley).
-  
