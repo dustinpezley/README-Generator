@@ -92,48 +92,48 @@ function generateMarkdown(data) {
 
   // Main README text.
   return `# ${data.title}
-    ![License badge](${renderLicenseBadge(data.licenseConfirm, data.license, data.badgeColor)})
+![License badge](${renderLicenseBadge(data.licenseConfirm, data.license, data.badgeColor)})
 
-    ## Description
-    ${data.description}
+## Description
+${data.description}
 
-    ## Table of Contents
-    * [Installation](#installation)
-    * [Usage](#usage)
-    * [License](#license)
-    * [Contributing](#contributing)
-    * [Tests](#tests)
-    * [Questions](#questions)
-  
-    ## Installation
-    ${data.installations}
+## Table of Contents
+* [Installation](#installation)
+* [Usage](#usage)
+* [License](#license)
+* [Contributing](#contributing)
+* [Tests](#tests)
+* [Questions](#questions)
 
-    ## Usage
-    ${data.instructions}
-    ${data.screenshotsConfirm ? data.screenshots : ''}
+## Installation
+${data.installations}
 
-    ${data.collaboratorsConfirm ? '## Credits  ' : data.thirdPartyAssetsConfirm ? '## Credits  ' : data.tutorialConfirm ? '## Credits  ' : ''}
-    ${data.collaboratorsConfirm ? 'This project was produced as a collaborative effort between myself and the following:  ' : ''}
-    ${data.collaboratorsConfirm ? collabProfiles(collabLinksTrim) : ''}
-    ${data.thirdPartyAssetsConfirm ? thirdPartyJoin(thirdParty) : ''}
-    ${data.tutorialConfirm ? tutorials(tutorialLinksTrim) : ''}
+## Usage
+${data.instructions}
+${data.screenshotsConfirm ? data.screenshots : ''}
 
-    ## License
-    ${renderLicenseSection(data.license)}
+${data.collaboratorsConfirm ? '## Credits  ' : data.thirdPartyAssetsConfirm ? '## Credits  ' : data.tutorialConfirm ? '## Credits  ' : ''}
+${data.collaboratorsConfirm ? 'This project was produced as a collaborative effort between myself and the following:  ' : ''}
+${data.collaboratorsConfirm ? collabProfiles(collabLinksTrim) : ''}
+${data.thirdPartyAssetsConfirm ? thirdPartyJoin(thirdParty) : ''}
+${data.tutorialConfirm ? tutorials(tutorialLinksTrim) : ''}
 
-    ${data.featureConfirm ? '## Features  ' : ''}
-    ${data.featureConfirm ? data.features : ''}
+## License
+${renderLicenseSection(data.license)}
 
-    ## Contributing
-    ${data.contributions}
+${data.featureConfirm ? '## Features  ' : ''}
+${data.featureConfirm ? data.features : ''}
 
-    ## Tests
-    ${data.testing}
+## Contributing
+${data.contributions}
 
-    ## Questions
-    If you have any questions on this application or wish to contribute, please contact me directly at ${data.email}.
-    You can view more of my work on my [GitHub profile](https://github.com/${data.github}).
-  `;
+## Tests
+${data.testing}
+
+## Questions
+If you have any questions on this application or wish to contribute, please contact me directly at ${data.email}.
+You can view more of my work on my [GitHub profile](https://github.com/${data.github}).
+`;
 }
 
 module.exports = generateMarkdown;
