@@ -273,7 +273,7 @@ function writeFile(fileName, data) {
 
 questions()
   .then(answers => {
-    return writeFile('README.md', generateMarkdown(answers));
+    return writeFile('./output/README.md', generateMarkdown(answers));
   })
   // .then(data => {
   //   return writeFile(data);
